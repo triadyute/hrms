@@ -1,0 +1,72 @@
+@extends('layouts.app')
+@section('content')
+@include('inc.messages')
+<div class="row">
+        <div class="col-md-6">
+                <h6>Departments</h6>
+        </div>
+<div class="col-md-6">
+        <button type="button" class="btn btn-default btn-sm float-right mb-2" data-toggle="modal" data-target="#modal-sm">
+           <i class="fa fa-plus"></i> Add Department
+        </button>
+</div>
+</div>
+<div class="card small">
+    <div class="card-header">
+                    <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>HEAD OF DEPT.</th>
+                        <th>MANAGER(S)</th>
+                        <th># OF STAFF</th>
+                        <th>DATE CREATED</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($departments as $department)
+                        <tr>
+                            <td>{{$department->id}}</td>
+                            <td>{{$department->name}}</td>
+                            <td>HOD Name</td>
+                            <td>Manager name</td>
+                            <td>{{3}}</td>
+                            <td>{{$department->created_at}}</td>
+                            <td><button class="btn btn-primary btn-sm">Edit</button><button class="btn btn-primary btn-sm">Delete</button></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-sm">
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">Add new Department</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form method="POST" action="{{route('department.store')}}">
+        @csrf
+        <input type="text" class="form-control" name="name" placeholder="Department name">
+    </div>
+    <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save department</button>
+    </div>
+    </form>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->   
+@endsection
