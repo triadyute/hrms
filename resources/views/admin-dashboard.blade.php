@@ -7,7 +7,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>People</h3>
+                    <h4>People</h4>
     
                     <p>22 Employees</p>
                 </div>
@@ -22,7 +22,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Company</h3>
+                    <h4>Company</h4>
     
                     <p>4 Departments</p>
                 </div>
@@ -37,7 +37,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Users</h3>
+                    <h4>Users</h4>
     
                     <p>22 Users</p>
                 </div>
@@ -52,7 +52,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Projects</h3>
+                    <h4>Projects</h4>
     
                     <p>4 Active Projects</p>
                 </div>
@@ -69,7 +69,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Attendance</h3>
+                    <h4>Attendance</h4>
     
                     <p>1 Entries Last week</p>
                 </div>
@@ -84,7 +84,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Leave</h3>
+                    <h4>Leave</h4>
     
                     <p>0 Upcoming</p>
                 </div>
@@ -99,7 +99,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Reports</h3>
+                    <h4>Reports</h4>
     
                     <p>View/Download Report</p>
                 </div>
@@ -114,7 +114,7 @@
                 <!-- small box -->
                 <div class="small-box">
                 <div class="inner">
-                    <h3>Settings</h3>
+                    <h4>Settings</h4>
     
                     <p>Settings</p>
                 </div>

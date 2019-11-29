@@ -35,7 +35,7 @@
                             <td>HOD Name</td>
                             <td>Manager name</td>
                             <td>{{count($department->getEmployees())}}</td>
-                            <td>{{$department->created_at}}</td>
+                            <td>{{\Carbon\Carbon::parse($department->created_at)->toFormattedDateString()}}</td>
                             <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal-small"><i class="fa fa-edit fa-xs"></i> Edit</button> <button class="btn btn-primary btn-xs"><i class="fa fa-trash fa-xs"></i> Delete</button></td>
                         </tr>
                     @endforeach
