@@ -13,4 +13,10 @@ class Department extends Model
     {
         return $this->hasMany('App\EmployeeProfile');
     }
+
+    public function getEmployees(){
+        return User::whereHas('employeeProfile', function($q){
+            $q->where('department_id', $this->id);
+        })->get();
+    }
 }

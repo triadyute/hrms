@@ -16,6 +16,11 @@ class UserController extends Controller
     public function index()
     {
         $users= User::paginate(15);
+        // $users = User::whereHas('roles', function($q){
+        //     $q->where('name', 'Admin')->orWhere('name', 'Manager');
+        // })->get();
+
+        //return $users;
         return view('users.index', compact('users'));
     }
 
