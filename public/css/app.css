@@ -11108,3 +11108,7 @@ h1 {
   font-size: 0.9em;
 }
 
+.main-sidebar {
+  overflow: hidden;
+}
+

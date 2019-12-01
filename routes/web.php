@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -27,4 +27,5 @@ Route::get('user/{user}/edit', 'UserController@edit')->middleware('auth')->name(
 Route::put('user/{user}', 'UserController@update')->middleware('auth')->name('user.update');
 Route::delete('user/{user}', 'UserController@destroy')->middleware('auth')->name('user.destroy');
 Route::resource('department', 'DepartmentController')->middleware('auth');
-Route::resource('leave', 'LeaveController')->middleware('auth');
+Route::get('leave', 'LeaveController@index')->name('leave.index')->middleware('auth');
+Route::get('leave/requests', 'LeaveController@view_leave_requests')->name('leave.requests')->middleware('auth');

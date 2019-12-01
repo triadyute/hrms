@@ -8,10 +8,10 @@
         </a>
     
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" style="overflow-x: hidden;">
           <!-- Sidebar Menu -->
           <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column small" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column small" data-widget="treeview" role="menu" data-accordion="false" >
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               {{-- <li class="nav-item has-treeview menu-open">
@@ -166,32 +166,32 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="pages/forms/general.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>General Elements</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/forms/advanced.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Advanced Elements</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/forms/editors.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Editors</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>
-                    Recruitment
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>General Elements</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="pages/forms/advanced.html" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Advanced Elements</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="pages/forms/editors.html" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Editors</p>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-th"></i>
+                              <p>
+                                Recruitment
+                                <i class="fas fa-angle-left right"></i>
+                              </p>
+                            </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="pages/tables/simple.html" class="nav-link">
@@ -252,7 +252,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="pages/mailbox/compose.html" class="nav-link">
+                    <a href="{{route('leave.requests')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Manage Leave Requests</p>
                     </a>

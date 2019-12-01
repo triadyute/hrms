@@ -15,7 +15,15 @@ class CreateLeavesTable extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('total_days')->default(21);
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('vacation')->default(0);
+            $table->unsignedInteger('sick_leave')->default(0);
+            $table->unsignedInteger('maternity_leave')->default(0);
+            $table->unsignedInteger('compassionate_leave')->default(0);
+            $table->unsignedInteger('personal_leave')->default(0);
+            $table->unsignedInteger('other')->default(0);
+            $table->string('other_details')->nullable();
+            $table->unsignedInteger('total_days')->default(0);
             $table->timestamps();
         });
     }
