@@ -7,7 +7,7 @@
         <h6>Employees</h6>
     </div>
     <div class="col-md-6">
-        <button type="button" class="btn btn-primary btn-xs float-right mb-2" data-toggle="modal"
+        <button type="button" class="btn btn-primary btn-xs float-right mb-3" data-toggle="modal"
             data-target="#modal-sm">
             &nbsp;<i class="fa fa-user-plus fa-xs"></i>&nbsp; &nbsp;Add Employee&nbsp;
         </button>
@@ -24,6 +24,7 @@
                         <td>Name</td>
                         <td>Job Title</td>
                         <td>Department</td>
+                        <td>Manager</td>
                         <td>Email</td>
                         <td>Phone</td>
                         <td>Hire date</td>
@@ -45,6 +46,7 @@
                         <td>@if ($user->employeeprofile)
                             {{$user->employeeprofile->department->name}}
                             @endif</td>
+                        <td>{{'Manager name'}}</td>
                         <td>{{$user->email}}</td>
                         <td>+1-555-555-5555</td>
                         <td>{{\Carbon\Carbon::parse($user->created_at)->toFormattedDateString()}}</td>
@@ -65,7 +67,7 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add new user</h5>
+                <h5 class="modal-title">Add new employee</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

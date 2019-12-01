@@ -4,7 +4,7 @@
         <a href="{{route('home')}}" class="brand-link">
           <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                style="opacity: .8">
-          <span class="brand-text font-weight-light">HR Portal</span>
+          <span class="brand-text font-weight-light"><strong>HR PORTAL</strong></span>
         </a>
     
         <!-- Sidebar -->
@@ -14,14 +14,14 @@
             <ul class="nav nav-pills nav-sidebar flex-column small" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
-              <li class="nav-item has-treeview menu-open">
+              {{-- <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Admin Dashboard
                   </p>
                 </a>
-              </li>
+              </li> --}}
               {{-- <li class="nav-item">
                 <a href="pages/widgets.html" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
@@ -91,18 +91,12 @@
                   <li class="nav-item">
                     <a href="{{route('user.index')}}" class="nav-link">
                       <i class="fas fa-users fa -xs nav-icon"></i>
-                      <p>Employees</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{route('user.create')}}" class="nav-link">
-                      <i class="fas fa-user-plus nav-icon"></i>
-                      <p>New Employee</p>
+                      <p>Manage Employees</p>
                     </a>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item has-treeview">
+              {{-- <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-chart-line"></i>
                   <p>
@@ -160,7 +154,7 @@
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> --}}
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-file-archive"></i>
@@ -221,7 +215,7 @@
               </li>
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-user-alt"></i>
+                    <i class="nav-icon fas fa-id-card"></i>
                     <p>
                     Personal Information
                     <i class="fas fa-angle-left right"></i>
@@ -258,21 +252,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="pages/mailbox/mailbox.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Inbox</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
                     <a href="pages/mailbox/compose.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Compose</p>
+                      <p>Manage Leave Requests</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/mailbox/read-mail.html" class="nav-link">
+                    <a href="{{route('leave.index')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Read</p>
+                      <p>View upcoming</p>
                     </a>
                   </li>
                 </ul>
@@ -304,7 +292,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon far fa-building"></i>
                   <p>
-                    Departments
+                    Company
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
@@ -312,9 +300,15 @@
                   <li class="nav-item">
                     <a href="{{route('department.index')}}" class="nav-link">
                       <i class="fas fa-puzzle-piece nav-icon"></i>
-                      <p>Manage Departments</p>
+                      <p>Departments</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fas fa-info nav-icon"></i>
+                        <p>Company Information</p>
+                      </a>
+                    </li>
                   {{-- <li class="nav-item">
                       <a href="{{route('department.create')}}" class="nav-link">
                         <i class="far fa-plus-square nav-icon"></i>

@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="{{asset('/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!--Calendar-->
+  <link href="{{asset('/fullcalendar/core/main.css')}}" rel='stylesheet' />
+  <link href="{{asset('fullcalendar/daygrid/main.css')}}" rel='stylesheet' />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper" id="app">
@@ -75,7 +78,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="{{asset('/plugins/chart.js')}}/Chart.min.js')}}"></script>
+<script src="{{asset('/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{asset('/plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
@@ -98,5 +101,21 @@
 <script src="{{ asset('/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('/dist/js/demo.js')}}"></script>
+<script src="{{ asset('fullcalendar/core/main.js')}}"></script>
+<script src="{{ asset('fullcalendar/daygrid/main.js')}}"></script>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'dayGrid' ]
+    });
+
+    calendar.render();
+  });
+
+</script>
 </body>
 </html>

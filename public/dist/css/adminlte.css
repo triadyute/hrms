@@ -18267,11 +18267,11 @@ html.maximized-card {
 }
 
 .small-box {
-  /*border-radius: 0.15rem;*/
+  border-radius: 0.25rem;
   /*box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);*/
   border: 1px lightgrey solid;
   display: block;
-  margin-bottom: 20px;
+  margin: 0 15px 40px 15px;
   position: relative;
 }
 
@@ -18297,7 +18297,15 @@ html.maximized-card {
 
 .small-box h3 {
   font-size: 1rem;
-  /*font-weight: bold;*/
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.small-box h4 {
+  font-size: 1.3rem;
+  color:grey;
+  font-weight: bold;
   margin: 0 0 10px 0;
   padding: 0;
   white-space: nowrap;

@@ -6,7 +6,7 @@
                 <h6>Departments</h6>
         </div>
 <div class="col-md-6">
-        <button type="button" class="btn btn-primary btn-xs float-right mb-2" data-toggle="modal" data-target="#modal-sm">
+        <button type="button" class="btn btn-primary btn-xs float-right mb-3" data-toggle="modal" data-target="#modal-sm">
             &nbsp;<i class="fa fa-plus fa-xs"></i>&nbsp; &nbsp;Add Department&nbsp;
         </button>
 </div>

@@ -27,3 +27,4 @@ Route::get('user/{user}/edit', 'UserController@edit')->middleware('auth')->name(
 Route::put('user/{user}', 'UserController@update')->middleware('auth')->name('user.update');
 Route::delete('user/{user}', 'UserController@destroy')->middleware('auth')->name('user.destroy');
 Route::resource('department', 'DepartmentController')->middleware('auth');
+Route::resource('leave', 'LeaveController')->middleware('auth');

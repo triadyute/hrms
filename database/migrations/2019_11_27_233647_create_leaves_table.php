@@ -15,6 +15,7 @@ class CreateLeavesTable extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('total_days')->default(21);
             $table->timestamps();
         });
     }
