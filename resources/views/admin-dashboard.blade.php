@@ -165,7 +165,7 @@
                 <div class="inner">
                     <h4>Reports</h4>
 
-                    <p>View/Download Report</p>
+                    <p>Manage Reports</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-document-text"></i>
@@ -178,14 +178,14 @@
             <!-- small box -->
             <div class="small-box">
                 <div class="inner">
-                    <h4>Settings</h4>
+                    <h4>Forms</h4>
 
-                    <p>Settings</p>
+                    <p>HR Forms</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-gear-b"></i>
+                    <i class="ion ion-clipboard"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Manage Forms <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -195,14 +195,14 @@
             <!-- small box -->
             <div class="small-box">
                 <div class="inner">
-                    <h4>Attendance</h4>
+                    <h4>Expense</h4>
 
                     <p>1 Entries Last week</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-clock"></i>
+                    <i class="ion ion-card"></i>
                 </div>
-                <a href="#" class="small-box-footer">Monitor Attendance <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Manage Expense <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -210,12 +210,12 @@
             <!-- small box -->
             <div class="small-box">
                 <div class="inner">
-                    <h4>Leave</h4>
+                    <h4>Travel</h4>
 
                     <p>0 Upcoming</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-calendar"></i>
+                    <i class="ion ion-plane"></i>
                 </div>
                 <a href="#" class="small-box-footer">Leave Management <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -225,12 +225,12 @@
             <!-- small box -->
             <div class="small-box">
                 <div class="inner">
-                    <h4>Reports</h4>
+                    <h4>Training</h4>
 
-                    <p>View/Download Report</p>
+                    <p>3 Courses</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-document-text"></i>
+                    <i class="ion ion-university"></i>
                 </div>
                 <a href="#" class="small-box-footer">Generate a Report <i class="fas fa-arrow-circle-right"></i></a>
             </div>

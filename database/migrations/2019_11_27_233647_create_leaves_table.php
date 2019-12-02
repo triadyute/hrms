@@ -15,7 +15,7 @@ class CreateLeavesTable extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('employee_profile_id')->nullable();
             $table->unsignedInteger('vacation')->default(0);
             $table->unsignedInteger('sick_leave')->default(0);
             $table->unsignedInteger('maternity_leave')->default(0);

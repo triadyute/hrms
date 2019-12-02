@@ -20,6 +20,13 @@ class CreateEmployeeProfilesTable extends Migration
             $table->unsignedInteger('manager_id')->nullable();
             $table->string('job_title')->nullable();
             $table->date('hire_date')->nullable();
+            $table->string('id_number')->nullable();
+            $table->string('id_type')->nullable();
+            $table->string('employment_status')->nullable();
+            $table->string('profile_photo')->default('avatar.png');
+            $table->string('gender')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('marital_status')->nullable();
             $table->timestamps();
         });
     }
