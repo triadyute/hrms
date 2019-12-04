@@ -2,6 +2,7 @@
 
 @section('content')
 @include('inc.messages')
+<h5>Found {{count($users)}} @if(count($users) == 1 ) result @else results @endif</h5>
 <div class="row">
     <div class="col-md-6">
         <form class="form-inline" method="POST" action="{{route('user.results')}}">

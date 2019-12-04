@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
         $user->employee_profile_id = factory(\App\EmployeeProfile::class)->create(['user_id' => $user->id, 'department_id' => 1, 'manager_id' => 2, 'job_title' => 'Software Developer'])->id;
         $user->email = 'user@hrportal.com';
         $user->first_name = $faker->firstName();
+        $user->middle_name = $faker->firstName();
         $user->last_name = $faker->lastName();
         $user->email_verified_at = now();
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password
@@ -33,6 +34,7 @@ class UsersTableSeeder extends Seeder
         $manager->employee_profile_id = factory(\App\EmployeeProfile::class)->create(['user_id' => $manager->id, 'department_id' => 1, 'job_title' => 'Lead Developer'])->id;
         $manager->email = 'manager@hrportal.com';
         $manager->first_name = $faker->firstName();
+        $manager->middle_name = $faker->firstName();
         $manager->last_name = $faker->lastName();
         $manager->email_verified_at = now();
         $manager->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password

@@ -41,10 +41,12 @@ class VerifyEmail extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url('/login');
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->greeting('Hello ' .$this->user->first_name .'!')
+                    ->line('Your account was created by admin.')
+                    ->action('Click here to verify', $url)
+                    ->line('Welcome to Company Name');
     }
 
     /**

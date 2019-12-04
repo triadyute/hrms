@@ -20,4 +20,21 @@ class Department extends Model
             $q->where('department_id', $this->id);
         })->get();
     }
+
+    public function getManagers(){
+        return User::whereHas('employeeProfile', function($q){
+            $q->where('department_id', $this->id);
+        })->whereHas('roles', function ($q) {
+            $q->where('name', 'Manager')->orWhere('name', 'Admin');
+        })->get();
+    }
+
+    public function getAdmin()
+    {
+        return User::whereHas('employeeProfile', function ($q) {
+            $q->where('department_id', $this->id);
+        })->whereHas('roles', function ($q) {
+            $q->where('name', 'Admin');
+        })->get();
+    }
 }

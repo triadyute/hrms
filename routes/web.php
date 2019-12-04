@@ -29,3 +29,5 @@ Route::delete('user/{user}', 'UserController@destroy')->middleware('auth')->name
 Route::resource('department', 'DepartmentController')->middleware('auth');
 Route::get('leave', 'LeaveController@index')->name('leave.index')->middleware('auth');
 Route::get('leave/requests', 'LeaveController@view_leave_requests')->name('leave.requests')->middleware('auth');
+Route::get('employee-profile/{employeeProfile}/edit', 'EmployeeProfileController@edit')->name('employee-profile.edit')->middleware('auth');
+Route::post('/user/search-results', 'UserController@results')->name('user.results')->middleware('auth');

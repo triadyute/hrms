@@ -3549,7 +3549,14 @@ input[type="button"].btn-block {
 }
 
 .input-group-append {
+  background-color: #0069D9;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   margin-left: -1px;
+}
+
+.input-group-append i{
+  color: #ffffff;
 }
 
 .input-group-text {
@@ -18277,11 +18284,12 @@ html.maximized-card {
 
 .small-box > .inner {
   padding: 10px;
+  color:gray;
 }
 
 .small-box > .small-box-footer {
   background: rgba(0, 0, 0, 0.1);
-  color: /*rgba(255, 255, 255, 0.8)*/#536b84;
+  color: gray;/*rgba(255, 255, 255, 0.8); */
   display: block;
   padding: 3px 0;
   position: relative;
@@ -18304,8 +18312,8 @@ html.maximized-card {
 }
 .small-box h4 {
   font-size: 1.3rem;
-  color:#536b84;
-  /*font-weight: bold;*/
+  color:gray;
+  font-weight: bold;
   margin: 0 0 10px 0;
   padding: 0;
   white-space: nowrap;

@@ -103,12 +103,12 @@
                 <div class="inner">
                     <h4>Documents</h4>
 
-                    <p>Managememt</p>
+                    <p>Employee Docs</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-document"></i>
                 </div>
-                <a href="#" class="small-box-footer">Manage Users <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Manage Documents <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -217,7 +217,7 @@
                 <div class="icon">
                     <i class="ion ion-plane"></i>
                 </div>
-                <a href="#" class="small-box-footer">Leave Management <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">View upcoming <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -232,7 +232,7 @@
                 <div class="icon">
                     <i class="ion ion-university"></i>
                 </div>
-                <a href="#" class="small-box-footer">Generate a Report <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer">Schedule courses <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\EmployeeProfile;
-use App\Department;
+use App\Training;
 use Illuminate\Http\Request;
 
-class EmployeeProfileController extends Controller
+class TrainingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class EmployeeProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\EmployeeProfile  $employeeProfile
+     * @param  \App\Training  $training
      * @return \Illuminate\Http\Response
      */
-    public function show(EmployeeProfile $employeeProfile)
+    public function show(Training $training)
     {
         //
     }
@@ -53,23 +52,22 @@ class EmployeeProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EmployeeProfile  $employeeProfile
+     * @param  \App\Training  $training
      * @return \Illuminate\Http\Response
      */
-    public function edit(EmployeeProfile $employeeProfile)
+    public function edit(Training $training)
     {
-        $departments = Department::all();
-        return view('employees.edit', compact('employeeProfile', 'departments'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EmployeeProfile  $employeeProfile
+     * @param  \App\Training  $training
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EmployeeProfile $employeeProfile)
+    public function update(Request $request, Training $training)
     {
         //
     }
@@ -77,10 +75,10 @@ class EmployeeProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EmployeeProfile  $employeeProfile
+     * @param  \App\Training  $training
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EmployeeProfile $employeeProfile)
+    public function destroy(Training $training)
     {
         //
     }

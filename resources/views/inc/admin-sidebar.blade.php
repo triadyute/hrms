@@ -90,7 +90,7 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="{{route('user.index')}}" class="nav-link">
-                      <i class="fas fa-users fa -xs nav-icon"></i>
+                      <i class="fa fa-users fa-xs nav-icon"></i>
                       <p>Manage Employees</p>
                     </a>
                   </li>

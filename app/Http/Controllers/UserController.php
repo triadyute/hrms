@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\EmployeeProfile;
+use App\Notifications\VerifyEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
@@ -17,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users= User::paginate(15);
+        $users= User::paginate(9);
         $departments = Department::all();
         // $users = User::whereHas('roles', function($q){
         //     $q->where('name', 'Admin')->orWhere('name', 'Manager');
@@ -49,6 +50,7 @@ class UserController extends Controller
         $random_password = Str::random(16);
         $data = $request->validate([
             'first_name' => 'required|string|max:255',
+            'middle_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'job_title' => 'required|string|max:255',
@@ -58,6 +60,7 @@ class UserController extends Controller
         ]);
         $user = User::create([
             'first_name' => $data['first_name'],
+            'middle_name' => $data['middle_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => $random_password
@@ -82,7 +85,23 @@ class UserController extends Controller
         $user->roles()->attach($role);
         $user->save();
         $employee_profile->save();
+        $user->notify(new VerifyEmail($user));
         return redirect()->route('user.index')->with('status', 'Employee added');
+    }
+
+    public function results(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+        $query = $request->input('query');
+        $users = User::where('first_name', 'like', "%$query%")
+        ->orWhere('middle_name', 'like', "%$query%")
+        ->orWhere('last_name', 'like', "%$query%")
+        ->paginate(9);
+        $departments = Department::all();
+        //return $users;
+        return view('users.search-results', compact('users', 'departments'));
     }
 
     /**

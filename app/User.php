@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-       'employee_profile_id', 'first_name', 'last_name', 'email', 'password',
+       'employee_profile_id', 'first_name', 'middle_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -60,9 +60,24 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasRole('Admin');
     }
 
+    public function hasManagerRole()
+    {
+        return $this->hasRole('Manager');
+    }
+
     public function hasUserRole()
     {
         return $this->hasRole('User');
+    }
+
+    public function getManagers()
+    {
+        return User::whereHas('employeeProfile', function ($q) {
+            $q->where('department_id', $this->employeeprofile->department_id);
+        })
+        ->whereHas('roles', function ($q) {
+            $q->where('name', 'Manager');
+        })->get();
     }
 
 }
