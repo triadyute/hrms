@@ -3,7 +3,7 @@
 @section('content')
 @include('inc.messages')
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
         <form class="form-inline" method="POST" action="{{route('user.results')}}">
             @csrf
             <div class="input-group input-group-sm">
@@ -18,7 +18,7 @@
         </form>
     </div>
     <div class="col-md-6">
-        <button type="button" class="btn btn-primary btn-sm float-right mb-3" data-toggle="modal"
+        <button type="button" class="btn btn-primary btn-sm float-right mb-4 mt-2" data-toggle="modal"
             data-target="#modal-default">
             &nbsp;<i class="fa fa-user-plus fa-xs"></i>&nbsp; &nbsp;Add Employee&nbsp;
         </button>
@@ -91,7 +91,7 @@
                         {{-- <div class="card-header text-muted border-bottom-0">
                             Digital Strategist
                         </div> --}}
-                        <div class="card-body pt-0">
+                        <div class="card-body pt-3">
                             <div class="row">
                                 <div class="col-7">
                                     <h2 class="lead"><b>{{$user->first_name .' '. $user->last_name}}</b></h2>

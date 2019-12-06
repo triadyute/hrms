@@ -19,10 +19,9 @@
         </form>
     </div>
     <div class="col-md-6">
-        <button type="button" class="btn btn-primary btn-sm float-right mb-3" data-toggle="modal"
-            data-target="#modal-default">
-            &nbsp;<i class="fa fa-user-plus fa-xs"></i>&nbsp; &nbsp;Add Employee&nbsp;
-        </button>
+        <a href="{{route('user.index')}}"><button type="button" class="btn btn-primary btn-sm float-right mb-3">
+            &nbsp;<i class="fa fa-undo fa-xs"></i>&nbsp; &nbsp;Back to Employees&nbsp;
+        </button></a>
     </div>
 </div>
 {{-- <div class="card small">

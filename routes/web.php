@@ -26,8 +26,11 @@ Route::get('user/{user}', 'UserController@show')->middleware('auth')->name('user
 Route::get('user/{user}/edit', 'UserController@edit')->middleware('auth')->name('user.edit');
 Route::put('user/{user}', 'UserController@update')->middleware('auth')->name('user.update');
 Route::delete('user/{user}', 'UserController@destroy')->middleware('auth')->name('user.destroy');
+Route::get('employee-profile/{employeeProfile}/edit', 'EmployeeProfileController@edit')->name('employee-profile.edit')->middleware('auth');
+Route::post('employee-profile', 'EmployeeProfileController@store')->name('employee-profile.store')->middleware('auth');
+Route::post('/user/search-results', 'UserController@results')->name('user.results')->middleware('auth');
 Route::resource('department', 'DepartmentController')->middleware('auth');
 Route::get('leave', 'LeaveController@index')->name('leave.index')->middleware('auth');
 Route::get('leave/requests', 'LeaveController@view_leave_requests')->name('leave.requests')->middleware('auth');
-Route::get('employee-profile/{employeeProfile}/edit', 'EmployeeProfileController@edit')->name('employee-profile.edit')->middleware('auth');
-Route::post('/user/search-results', 'UserController@results')->name('user.results')->middleware('auth');
+Route::get('/leave-request', 'LeaveController@request_leave')->name('request.leave')->middleware('auth');
+Route::post('/leave-request/store','LeaveRequestController@store')->name('leave.store')->middleware('auth');

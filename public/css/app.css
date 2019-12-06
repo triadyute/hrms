@@ -11116,3 +11116,14 @@ h1 {
   background-color: white;
 }
 
+.container-fluid #calendar {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: 1em;
+}
+
+.employee-details {
+  font-size: 0.85em;
+}
+

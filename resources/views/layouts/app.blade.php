@@ -34,6 +34,9 @@
     <!--Calendar-->
     <link href="{{asset('/fullcalendar/core/main.css')}}" rel='stylesheet' />
     <link href="{{asset('fullcalendar/daygrid/main.css')}}" rel='stylesheet' />
+    <!--Tags input-->
+    <link rel="stylesheet" href="{{asset('/bootstrap-tagsinput-master/dist/bootstrap-tagsinput.css')}}">
+    <link href="{{asset('/css/typehead.css')}}" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -92,6 +95,10 @@
     <script src="{{asset('/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
     <!-- jQuery Knob Chart -->
     <script src="{{asset('/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+    <!-- Select2 -->
+    <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
+    <!--Input mask-->
+    <script src="{{asset('/plugins/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
     <!-- daterangepicker -->
     <script src="{{asset('/plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('/plugins/daterangepicker/daterangepicker.js')}}"></script>
@@ -113,45 +120,7 @@
     <!-- fullCalendar 2.2.5 -->
     <script src='{{asset('/fullcalendar/core/main.js')}}'></script>
     <script src='{{asset('/fullcalendar/daygrid/main.js')}}'></script>
-    <!--Algolia places-->
-    <script>
-        (function () {
-            var placesAutocomplete = places({
-                appId: 'plBRUTAXGKP1',
-                apiKey: '5c6751ab6456f52149f1151eade8ae79',
-                container: document.querySelector('#form-address'),
-                templates: {
-                    value: function (suggestion) {
-                        return suggestion.name;
-                    }
-                }
-            }).configure({
-                type: 'address'
-            });
-            placesAutocomplete.on('change', function resultSelected(e) {
-                document.querySelector('#form-address2').value = e.suggestion.administrative || '';
-                document.querySelector('#form-city').value = e.suggestion.city || '';
-                document.querySelector('#form-zip').value = e.suggestion.postcode || '';
-            });
-        })();
 
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(".add-row").click(function () {
-                var $clone = $("div.personal-details").first().clone();
-                $clone.append(
-                    "<button type='button' class='btn btn-sm btn-danger remove-row mb-3'>- Remove education</button>"
-                    );
-                $clone.insertBefore(".add-row");
-            });
-
-            $(".form-style-9").on("click", ".remove-row", function () {
-                $(this).parent().remove();
-            });
-        });
-
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
@@ -162,8 +131,11 @@
 
             calendar.render();
         });
-
     </script>
+
+    <script src="{{asset('/js/typehead.js')}}"></script>
+    <script src="{{asset('/bootstrap-tagsinput-master/dist/bootstrap-tagsinput.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>

@@ -13,22 +13,14 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                            <div class="text-center">
-                                    <img class="profile-user-img img-fluid img-circle" src="{{asset('/dist/img/user4-128x128.jpg')}}"
-                                        alt="User profile picture">
-                                </div>
-        
-                                <h3 class="profile-username text-center">{{$user->first_name .' '.$user->last_name}}</h3>
-        
-                                <p class="text-muted text-center">{{$user->employeeProfile->job_title}}</p>
-                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle"
+                                src="{{asset('/dist/img/user4-128x128.jpg')}}" alt="User profile picture">
+                        </div>
 
-                        <p class="text-muted">
-                            B.S. in Computer Science from the University of Tennessee at Knoxville
-                        </p>
+                        <h3 class="profile-username text-center">{{$user->first_name .' '.$user->last_name}}</h3>
 
-                        <hr>
-
+                        <p class="text-muted text-center">{{$user->employeeProfile->job_title}}</p>
                         <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
 
                         <p class="text-muted">Malibu, California</p>
@@ -58,12 +50,12 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
-                <div class="card">
+                <div class="card employee-details">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#activity"
-                                    data-toggle="tab">Activity</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a>
+                            <li class="nav-item"><a class="nav-link active" href="#personal_info"
+                                    data-toggle="tab">Employee Information</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Documents</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a>
                             </li>
@@ -71,129 +63,79 @@
                     </div><!-- /.card-header -->
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="active tab-pane" id="activity">
-                                <!-- Post -->
-                                <div class="post">
-                                    <div class="user-block">
-                                        <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg"
-                                            alt="user image">
-                                        <span class="username">
-                                            <a href="#">Jonathan Burke Jr.</a>
-                                            <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                        </span>
-                                        <span class="description">Shared publicly - 7:30 PM today</span>
+                            <div class="active tab-pane" id="personal_info">
+                                <h6>Employee details</h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <strong>Full Name:</strong>
+                                        {{$user->first_name .' '. $user->middle_name .' '. $user->last_name}}<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston Jamaica<br>
+                                        <strong>Phone:</strong> +1-876-555-5555<br>
+                                        <strong>Gender: </strong> Female<br>
+                                        <strong>Date of birth:</strong> May 4, 1980<br>
+                                        <strong>Marital status:</strong> Single
                                     </div>
-                                    <!-- /.user-block -->
-                                    <p>
-                                        Lorem ipsum represents a long-held tradition for designers,
-                                        typographers and the like. Some people hate it and argue for
-                                        its demise, but others ignore the hate as they create awesome
-                                        tools to help create filler text for everyone from bacon lovers
-                                        to Charlie Sheen fans.
-                                    </p>
-
-                                    <p>
-                                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i>
-                                            Share</a>
-                                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i>
-                                            Like</a>
-                                        <span class="float-right">
-                                            <a href="#" class="link-black text-sm">
-                                                <i class="far fa-comments mr-1"></i> Comments (5)
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <input class="form-control form-control-sm" type="text"
-                                        placeholder="Type a comment">
+                                    <div class="col-md-4">
+                                        <strong>Department:</strong>
+                                        {{substr($user->employeeprofile->department->name, 0,15) .'...'}}<br>
+                                        <strong>Job Title:</strong> {{$user->employeeprofile->job_title}}<br>
+                                        <strong>Manager(s):</strong>
+                                        @foreach($user->getManagers() as $manager)
+                                        {{ $loop->first ? '' : ', ' }}
+                                        {{$manager->first_name.' '.$manager->last_name}}
+                                        @endforeach<br>
+                                        <strong>Email:</strong> {{$user->email}}<br>
+                                        <strong>Employment status:</strong> Full time<br>
+                                        <strong>Hire
+                                            date:</strong> {{\Carbon\Carbon::parse($user->employeeprofile->hire_date)->toFormattedDateString()}}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Employee ID:</strong> @if ($user->id < 10) {{"EMP00".$user->id}}
+                                            @elseif($user->id < 100) {{"EMP0".$user->id}} @else {{"EMP".$user->id}}
+                                                @endif<br>
+                                                <strong>ID type:</strong> Driver's lience<br>
+                                                <strong>ID number:</strong> 123-456-789
+                                    </div>
                                 </div>
-                                <!-- /.post -->
-
-                                <!-- Post -->
-                                <div class="post clearfix">
-                                    <div class="user-block">
-                                        <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg"
-                                            alt="User Image">
-                                        <span class="username">
-                                            <a href="#">Sarah Ross</a>
-                                            <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                        </span>
-                                        <span class="description">Sent you a message - 3 days ago</span>
+                                <hr>
+                                <h6>Emergency contacts</h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Janet Jackson<br>
+                                        <strong>Relationship:</strong> Sister<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
                                     </div>
-                                    <!-- /.user-block -->
-                                    <p>
-                                        Lorem ipsum represents a long-held tradition for designers,
-                                        typographers and the like. Some people hate it and argue for
-                                        its demise, but others ignore the hate as they create awesome
-                                        tools to help create filler text for everyone from bacon lovers
-                                        to Charlie Sheen fans.
-                                    </p>
-
-                                    <form class="form-horizontal">
-                                        <div class="input-group input-group-sm mb-0">
-                                            <input class="form-control form-control-sm" placeholder="Response">
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-danger">Send</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Latoya Jackson<br>
+                                        <strong>Relationship:</strong> Daughter<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Joe Jackson<br>
+                                        <strong>Relationship:</strong> Father<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
+                                    </div>
                                 </div>
-                                <!-- /.post -->
-
-                                <!-- Post -->
-                                <div class="post">
-                                    <div class="user-block">
-                                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg"
-                                            alt="User Image">
-                                        <span class="username">
-                                            <a href="#">Adam Jones</a>
-                                            <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                        </span>
-                                        <span class="description">Posted 5 photos - 5 days ago</span>
+                                <hr>
+                                <h6>Dependents</h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Janet Jackson<br>
+                                        <strong>Relationship:</strong> Sister<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
                                     </div>
-                                    <!-- /.user-block -->
-                                    <div class="row mb-3">
-                                        <div class="col-sm-6">
-                                            <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-sm-6">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <img class="img-fluid mb-3" src="../../dist/img/photo2.png"
-                                                        alt="Photo">
-                                                    <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
-                                                </div>
-                                                <!-- /.col -->
-                                                <div class="col-sm-6">
-                                                    <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg"
-                                                        alt="Photo">
-                                                    <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                                                </div>
-                                                <!-- /.col -->
-                                            </div>
-                                            <!-- /.row -->
-                                        </div>
-                                        <!-- /.col -->
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Latoya Jackson<br>
+                                        <strong>Relationship:</strong> Daughter<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
                                     </div>
-                                    <!-- /.row -->
-
-                                    <p>
-                                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i>
-                                            Share</a>
-                                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i>
-                                            Like</a>
-                                        <span class="float-right">
-                                            <a href="#" class="link-black text-sm">
-                                                <i class="far fa-comments mr-1"></i> Comments (5)
-                                            </a>
-                                        </span>
-                                    </p>
-
-                                    <input class="form-control form-control-sm" type="text"
-                                        placeholder="Type a comment">
+                                    <div class="col-md-4">
+                                        <strong>Name:</strong> Joe Jackson<br>
+                                        <strong>Relationship:</strong> Father<br>
+                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston, Jamaica
+                                    </div>
                                 </div>
-                                <!-- /.post -->
+                                <hr>
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="timeline">

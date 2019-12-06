@@ -57,4 +57,8 @@ class EmployeeProfile extends Model
     {
         return $this->hasOne('App\Leave');
     }
+
+    public function leaveRequests(){
+        return $this->hasMany('App\LeaveRequest');
+    }
 }

@@ -13,6 +13,11 @@ body .fc {
   font-size: 1em;
 }
 
+.fc-left h2{
+  font-weight: bold;
+  color: #2C3E50;
+}
+
 /* Colors
 --------------------------------------------------------------------------------------------------*/
 .fc-highlight {
@@ -114,6 +119,9 @@ hr.fc-divider {
 
 .fc th {
   text-align: center;
+  font-size: 1.5em;
+  color: #ffffff;
+  background: #2C3E50;
 }
 
 .fc th,
@@ -577,9 +585,18 @@ TODO: more distinction between this file and common.css
 }
 
 .fc-unthemed td.fc-today {
-  background: #fcf8e3;
+  background:lightgray;
+}
+.fc-today .fc-day-number{
+  color: #ffffff;
+  font-weight: bold;
 }
 
+.fc-day-number {
+    margin-right: .2em;
+    color: lightgray;
+    font-weight: bold;
+}
 .fc-unthemed .fc-disabled-day {
   background: #d7d7d7;
   opacity: 0.3;

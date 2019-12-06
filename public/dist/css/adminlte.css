@@ -28500,3 +28500,8 @@ a.text-muted:hover {
   border-color: #dee2e6;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+.btn-primary{
+  background-color: #00468B;
+  border-color: #00468B;
+}
