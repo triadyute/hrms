@@ -253,14 +253,8 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="{{route('leave.requests')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Manage Leave Requests</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{route('leave.index')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>View upcoming</p>
+                      <i class="far fa-calendar-check nav-icon"></i>
+                      <p>Manage requests</p>
                     </a>
                   </li>
                 </ul>
@@ -304,7 +298,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{route('company.show', $company)}}" class="nav-link">
                         <i class="fas fa-info nav-icon"></i>
                         <p>Company Information</p>
                       </a>

@@ -11,5 +11,7 @@
     </div>
 </div>
 <!-- /.row -->
-<div id='calendar' class="mb-4"></div>
+<div class="row" style="padding-bottom: 1em;">
+    <div id='calendar'></div>
+</div>
 @endsection

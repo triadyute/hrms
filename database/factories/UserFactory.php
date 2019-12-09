@@ -19,15 +19,15 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'first_name' => $faker->firstName(),
-        'middle_name' => $faker->firstName(),
         'employee_profile_id' => EmployeeProfile::create([
-            'user_id' => $faker->unique()->randomElement([4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]),
+            'user_id' => $faker->unique()->numberBetween($min = 4, $max = 23),
             'department_id' => 1,
             'manager_id' => 2,
             'job_title' => $faker->randomElement(['Web Developer','Tester',]),
             'hire_date' => now()
          ])->id,
+        'first_name' => $faker->firstName(),
+        'middle_name' => $faker->firstName(),
         'last_name' => $faker->lastName(),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),

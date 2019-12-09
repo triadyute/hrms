@@ -41,14 +41,17 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper" id="app">
-
+        <?php
+        use \App\Company;
+        $company = Company::find(1);
+        ?>
 
         @if (Auth::user()->hasAdminRole())
         @include('inc.admin-navbar')
-        @include('inc.admin-sidebar')
+        @include('inc.admin-sidebar', ['company' => $company])
         @else
         @include('inc.staff-navbar')
-        @include('inc.staff-sidebar')
+        @include('inc.staff-sidebar', ['company' => $company])
         @endif
 
         <!-- Content Wrapper. Contains page content -->

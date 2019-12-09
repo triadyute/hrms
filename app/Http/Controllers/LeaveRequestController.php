@@ -15,7 +15,8 @@ class LeaveRequestController extends Controller
      */
     public function index()
     {
-        //
+        $leave_requests = LeaveRequest::all();
+        return view('leave.index', compact('leave_requests'));
     }
 
     /**
@@ -35,41 +36,38 @@ class LeaveRequestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //dd(request()->all());
-        
+    {   
+        //dd($request->all());
         $dates = $request->dates;
         $dates = explode(" - ", $dates);
-        $start_date =  \Carbon\Carbon::parse($dates[0]);
-        $end_date = \Carbon\Carbon::parse($dates[1]);
+        $start_date =  Carbon::parse($dates[0]);
+        $end_date = Carbon::parse($dates[1]);
+        //Calculate Vacation
         $period = \Carbon\CarbonPeriod::create($start_date, $end_date);
-        $vacation = array();
+        $dates = array();
         // Iterate over the period
         foreach ($period as $date) {
-            if ($date->format('l') != 'Saturday' && $date->format('l') != 'Sunday') {
-                //echo $date->toFormattedDateString().' '. $date->format('l');
-                array_push($vacation, $date);
+            if (($date->format('l') != 'Saturday') && ($date->format('l') != 'Sunday')) {
+                array_push($dates, $date);
             }
         }
-
-        // Convert the period to an array of dates
-        return $vacation;
-        // $data = $request->validate([
-        //     'leave_type' => 'required|string|max:255',
-        //     'dates' => 'required|string|max:255',
-        //     'notes' => 'nullable|string',
-        // ]);
-        // $leave_request = LeaveRequest::create([
-        //     'employee_profile_id' => Auth::user()->employeeprofile->id,
-        //     'leave_type' => $data['leave_type'],
-        //     'days' => 4,
-        //     'notes' => $data['notes'],
-        //     'start_date' => $start_date,
-        //     'end_date' => $end_date
-        // ]);
-        // $leave_request->days = $start_date->diffInDays($end_date);
-        // $leave_request->save();
-        // return 'saved';
+        //End calculation
+        
+        $data = $request->validate([
+            'leave_type' => 'required|string|max:255',
+            'dates' => 'required|string|max:255',
+            'notes' => 'nullable|string',
+        ]);
+        $leave_request = LeaveRequest::create([
+            'employee_profile_id' => Auth::user()->employeeprofile->id,
+            'leave_type' => $data['leave_type'],
+            'days' => count($dates),
+            'notes' => $data['notes'],
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+        ]);
+        $leave_request->save();
+        return redirect()->route('leave.index')->with('status', 'Request submitted');
     }
 
     /**

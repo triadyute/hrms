@@ -7,8 +7,8 @@
         <form class="form-inline" method="POST" action="{{route('user.results')}}">
             @csrf
             <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search Employees" name="query"
-                    aria-label="Search">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search Employees"
+                    name="query" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-navbar" type="submit">
                         <i class="fas fa-search"></i>
@@ -106,13 +106,15 @@
                                         @endif
                                     </p>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li class="small"><span class="fa-li"><i class="fas fa-sm fa-envelope"></i></span>
+                                        <li class="small"><span class="fa-li"><i
+                                                    class="fas fa-sm fa-envelope"></i></span>
                                             {{$user->email}}</li>
                                         <li class="small"><span class="fa-li"><i
-                                                    class="fas fa-sm fa-map-marker"></i></span> Address: Demo Street 123,
+                                                    class="fas fa-sm fa-map-marker"></i></span> Address: Demo Street
+                                            123,
                                             Demo City 04312, NJ</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-sm fa-phone"></i></span>
-                                            Phone #: + 800 - 12 12 23 52</li>
+                                            Phone #: +1-555-555-5555</li>
                                     </ul>
                                 </div>
                                 <div class="col-5 text-center">
@@ -165,38 +167,89 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Add new employee</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form method="POST" action="{{route('user.store')}}" class="small">
                         @csrf
-                        <input type="text" class="form-control mb-2" name="first_name" placeholder="First name"
-                            autocomplete="off">
-                        <input type="text" class="form-control mb-2" name="middle_name" placeholder="Middle name"
-                            autocomplete="off">
-                        <input type="text" class="form-control mb-2" name="last_name" placeholder="Last name"
-                            autocomplete="off">
-                        <input type="email" class="form-control mb-2" name="email" id="email" placeholder="Email"
-                            autocomplete="off">
-                        <input type="text" class="form-control mb-2" name="job_title" placeholder="Job title"
-                            autocomplete="off">
-                        <select name="department" id="department" class="form-control mb-2" autocomplete="off">
-                            <option selected disabled>Select department</option>
-                            @foreach ($departments as $department)
-                            <option value="{{$department->id}}">{{$department->name}}</option>
-                            @endforeach
-                        </select>
-                        <select name="role" id="role" class="form-control mb-2" autocomplete="off">
-                            <option selected disabled>Select role</option>
-                            <option value="role_user">User</option>
-                            <option value="role_manager">Manager</option>
-                            <option value="role_admin">Admin</option>
-                        </select>
+                        <div class="form-group">
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" name="first_name"
+                                    placeholder="First name" autocomplete="off">
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" name="middle_name"
+                                    placeholder="Middle name" autocomplete="off">
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" name="last_name"
+                                    placeholder="Last name" autocomplete="off">
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-envelope" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <input type="email" class="form-control float-right" name="email" id="email"
+                                    placeholder="Email" autocomplete="off">
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-briefcase" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" name="job_title"
+                                    placeholder="Job title" autocomplete="off">
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-project-diagram" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <select name="department" id="department" class="form-control" autocomplete="off">
+                                    <option selected disabled>Select department</option>
+                                    @foreach ($departments as $department)
+                                    <option value="{{$department->id}}">{{$department->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="input-group row mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-cog" style="color:gray"></i>
+                                    </span>
+                                </div>
+                                <select name="role" id="role" class="form-control" autocomplete="off">
+                                    <option selected disabled>Select role</option>
+                                    <option value="role_user">User</option>
+                                    <option value="role_manager">Manager</option>
+                                    <option value="role_admin">Admin</option>
+                                </select>
+                            </div>
+                        </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save user</button>
                 </div>
                 </form>

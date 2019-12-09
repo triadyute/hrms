@@ -8,7 +8,12 @@ use App\User;
 class Department extends Model
 {
 
-    protected $fillable = ['name'];
+    protected $fillable = ['company_id', 'name'];
+
+    public function company()
+    {
+        return $this->belongsTo('App\Company');
+    }
 
     public function employeeProfiles()
     {

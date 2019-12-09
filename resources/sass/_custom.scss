@@ -24,3 +24,28 @@ h1{
 .employee-details{
     font-size: .85em;
 }
+
+.modal-header{
+    background:#2C3E50;
+    color:white;
+}
+
+.modal-title{
+    font-weight: bold;
+}
+
+select option {
+    font-size: .85em;
+}
+
+.leave_request {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEE;
+}
+
+.leave_request:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+}

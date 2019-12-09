@@ -44,12 +44,6 @@
                   <p>Request leave</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>View my leave requests</p>
-                </a>
-              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -77,7 +71,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-building"></i>
+              <i class="nav-icon fa fa-building"></i>
               <p>
                 Company
                 <i class="fas fa-angle-left right"></i>
@@ -85,9 +79,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/login.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
+                <a href="{{route('company.show', $company)}}" class="nav-link">
+                  <i class="fa fa-info nav-icon"></i>
+                  <p>Company Information</p>
                 </a>
               </li>
             </ul>

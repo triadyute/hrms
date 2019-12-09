@@ -8,19 +8,15 @@
 
                 <!-- About Me Box -->
                 <div class="card card-primary">
-                    {{-- <div class="card-header">
-                        <h3 class="card-title">About Me</h3>
-                    </div> --}}
-                    <!-- /.card-header -->
                     <div class="card-body">
-                        <div class="text-center mt-3">
-                            <img class="profile-user-img img-fluid img-circle"
-                                src="{{asset('/dist/img/user4-128x128.jpg')}}" alt="User profile picture">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle mt-3"
+                                src="{{asset('/dist/img/AdminLTELogo.png')}}" alt="User profile picture">
                         </div>
 
-                        <h3 class="profile-username text-center">{{$user->first_name .' '.$user->last_name}}</h3>
+                        <h3 class="profile-username text-center">{{$company->name}}</h3>
 
-                        <p class="text-muted text-center">{{$user->employeeProfile->job_title}}</p>
+                        <p class="text-muted text-center">Software Development Company</p>
                         <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
 
                         <p class="text-muted">Malibu, California</p>
@@ -36,13 +32,6 @@
                             <span class="tag tag-warning">PHP</span>
                             <span class="tag tag-primary">Node.js</span>
                         </p>
-
-                        <hr>
-
-                        <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum
-                            enim neque. one more sentence</p>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -54,7 +43,7 @@
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
                             <li class="nav-item"><a class="nav-link active" href="#personal_info"
-                                    data-toggle="tab">Employee Information</a></li>
+                                    data-toggle="tab">Company Information</a></li>
                             <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Documents</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a>
@@ -64,41 +53,6 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="personal_info">
-                                <h6>Employee details</h6>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <strong>Full Name:</strong>
-                                        {{$user->first_name .' '. $user->middle_name .' '. $user->last_name}}<br>
-                                        <strong>Address:</strong> 11 Campbell Blvd.<br>Kingston Jamaica<br>
-                                        <strong>Phone:</strong> +1-876-555-5555<br>
-                                        <strong>Gender: </strong> Female<br>
-                                        <strong>Date of birth:</strong> May 4, 1980<br>
-                                        <strong>Marital status:</strong> Single
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>Department:</strong>
-                                        {{$user->employeeprofile->department->name}}<br>
-                                        <strong>Job Title:</strong> {{$user->employeeprofile->job_title}}<br>
-                                        <strong>Manager(s):</strong>
-                                        @foreach($user->getManagers() as $manager)
-                                        {{ $loop->first ? '' : ', ' }}
-                                        {{$manager->first_name.' '.$manager->last_name}}
-                                        @endforeach<br>
-                                        <strong>Email:</strong> {{$user->email}}<br>
-                                        <strong>Employment status:</strong> Full time<br>
-                                        <strong>Hire
-                                            date:</strong> {{\Carbon\Carbon::parse($user->employeeprofile->hire_date)->toFormattedDateString()}}
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>Employee ID:</strong> @if ($user->id < 10) {{"EMP00".$user->id}}
-                                            @elseif($user->id < 100) {{"EMP0".$user->id}} @else {{"EMP".$user->id}}
-                                                @endif<br>
-                                                <strong>ID type:</strong> Driver's lience<br>
-                                                <strong>ID number:</strong> 123-456-789<br>
-                                                <strong>Languages:</strong> English, Spanish
-                                    </div>
-                                </div>
-                                <hr>
                                 <h6>Emergency contacts</h6>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -138,7 +92,7 @@
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <a href="{{route('employee-profile.edit', $user->employeeprofile)}}"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit profile</button></a>
+                                    <a href="#"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit Company Details</button></a>
                                 </div>
                             </div>
                             <!-- /.tab-pane -->

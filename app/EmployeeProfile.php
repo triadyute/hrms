@@ -28,7 +28,7 @@ class EmployeeProfile extends Model
         return $this->hasMany('App\Depemdent');
     }
 
-    public function emergency_contacts()
+    public function emergencyContacts()
     {
         return $this->hasMany('App\EmergencyContact');
     }
@@ -43,7 +43,7 @@ class EmployeeProfile extends Model
         return $this->hasMany('App\Certification');
     }
 
-    public function contact_information()
+    public function contactInformation()
     {
         return $this->hasMany('App\ContactInformation');
     }

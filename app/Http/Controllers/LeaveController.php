@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\LeaveRequest;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class LeaveController extends Controller
 
     public function view_leave_requests()
     {
-        return view('leave.view-requests');
+        $leave_requests = LeaveRequest::all();
+        return view('leave.view-requests', compact('leave_requests'));
     }
 
     public function request_leave()

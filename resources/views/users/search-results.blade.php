@@ -2,12 +2,11 @@
 
 @section('content')
 @include('inc.messages')
-<h5>Found {{count($users)}} @if(count($users) == 1 ) result @else results @endif</h5>
 <div class="row">
     <div class="col-md-6">
         <form class="form-inline" method="POST" action="{{route('user.results')}}">
             @csrf
-            <div class="input-group input-group-sm">
+            <div class="input-group input-group-sm mb-2">
                 <input class="form-control form-control-navbar" type="search" placeholder="Search Employees" name="query"
                     aria-label="Search">
                 <div class="input-group-append">
@@ -85,6 +84,12 @@
     <div class="card card-solid">
         <div class="card-body pb-0">
             <div class="row d-flex align-items-stretch">
+                @if(count($users) == 0)
+                    <h5 class="mb-4">No matching results found.</h5>
+                @else
+                <div class="col-12 mb-2">
+                    <h5>Found {{count($users)}} @if(count($users) == 1 ) result @else results @endif</h5>
+                </div>
                 @foreach ($users as $user)
                 <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                     <div class="card bg-light">
@@ -142,20 +147,11 @@
         <!-- /.card-body -->
         <div class="card-footer">
             <nav aria-label="Contacts Page Navigation">
-                {{-- <ul class="pagination justify-content-center m-0">
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                    <li class="page-item"><a class="page-link" href="#">8</a></li>
-                </ul> --}}
                 <span class="pagination justify-content-center m-0">{{ $users->links() }}</span>
             </nav>
         </div>
         <!-- /.card-footer -->
+        @endif
     </div>
     <!-- /.card -->
 

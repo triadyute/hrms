@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Company;
 class HomeController extends Controller
 {
     /**
@@ -24,11 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $company =  Company::find(1);
         if(Auth::user()->hasAdminRole()){
-            return view('admin-dashboard');
+            return view('admin-dashboard', compact('company'));
         }
         elseif(Auth::user()->hasUserRole()){
-            return view('employee-dashboard');
+            return view('employee-dashboard', compact('company'));
         }
     }
 }

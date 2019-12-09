@@ -91,9 +91,9 @@
                     <p>4 Departments</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-shuffle"></i>
+                    <i class="ion ion-ios-briefcase"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('company.show', $company)}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

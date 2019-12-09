@@ -20,6 +20,8 @@ class CreateLeaveRequestsTable extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->unsignedInteger('days')->nullable();
+            $table->text('notes')->nullable();
+            $table->string('approved')->default('pending');
             $table->timestamps();
         });
     }

@@ -30,7 +30,8 @@ Route::get('employee-profile/{employeeProfile}/edit', 'EmployeeProfileController
 Route::post('employee-profile', 'EmployeeProfileController@store')->name('employee-profile.store')->middleware('auth');
 Route::post('/user/search-results', 'UserController@results')->name('user.results')->middleware('auth');
 Route::resource('department', 'DepartmentController')->middleware('auth');
-Route::get('leave', 'LeaveController@index')->name('leave.index')->middleware('auth');
+Route::get('leave', 'LeaveRequestController@index')->name('leave.index')->middleware('auth');
 Route::get('leave/requests', 'LeaveController@view_leave_requests')->name('leave.requests')->middleware('auth');
 Route::get('/leave-request', 'LeaveController@request_leave')->name('request.leave')->middleware('auth');
 Route::post('/leave-request/store','LeaveRequestController@store')->name('leave.store')->middleware('auth');
+Route::get('/company/{company}', 'CompanyController@show')->name('company.show')->middleware('auth');

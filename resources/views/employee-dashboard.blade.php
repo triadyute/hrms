@@ -54,12 +54,12 @@
                 <div class="inner">
                     <h4>Leave</h4>
     
-                    <p>Apply for leave</p>
+                    <p>Leave requests</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-calendar"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{route('leave.index')}}" class="small-box-footer">Request leave <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
