@@ -32,13 +32,13 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 pt-1">
                             <a href="{{ route('password.request') }}">I forgot my password</a>
                     </div>
                     <!-- /.col -->
                 </div>
                 <div class="row">
-                    <div class="col-8 mt-2 offset-2">
+                    <div class="col-12 mt-2">
                         <button type="submit" class="btn btn-primary btn-block btn-sm">Sign In</button>
                     </div>
                     <!-- /.col -->
