@@ -3,11 +3,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
+                @auth
                 @if (Auth::user()->hasAdminRole())
                     <h1 class="m-0 text-dark">Admin Dashboard</h1>
                 @else
                     <h1 class="m-0 text-dark">Employee Dashboard</h1>
                 @endif
+                @endauth
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">

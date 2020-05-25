@@ -26,9 +26,6 @@
             <a href="../../index2.html"><b>HR</b>Portal</a>
         </div>
         <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-					<h5 class="mb-4">Sign in</h5>
 					@yield('content')
                 {{-- <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
@@ -40,15 +37,9 @@
                     </a>
                 </div> --}}
                 <!-- /.social-auth-links -->
-                <p class="mb-1">
+                {{-- <p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
-            </div>
-            <!-- /.login-card-body -->
-        </div>
+                </p> --}}
     </div>
     <!-- /.login-box -->
 

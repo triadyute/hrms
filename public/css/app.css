@@ -11152,3 +11152,7 @@ select option {
   border-bottom: none;
 }
 
+.login-card {
+  border-radius: 3px !important;
+}
+

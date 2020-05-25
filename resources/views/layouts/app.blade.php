@@ -45,7 +45,7 @@
         use \App\Company;
         $company = Company::find(1);
         ?>
-
+        @auth
         @if (Auth::user()->hasAdminRole())
         @include('inc.admin-navbar')
         @include('inc.admin-sidebar', ['company' => $company])
@@ -53,7 +53,7 @@
         @include('inc.staff-navbar')
         @include('inc.staff-sidebar', ['company' => $company])
         @endif
-
+        @endauth
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @include('inc.dashboard-header')
